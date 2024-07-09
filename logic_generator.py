@@ -51,7 +51,7 @@ class TruthTable(Symbols):
             else:
                 headers.append(let)
         headers.append(self.wff)
-        print(headers)
+        #print(headers)
         return headers
 
     # Gets num of distinct letters from the s
@@ -114,10 +114,10 @@ def main():
         if not s: continue
 
         # Uncomment to test
-        #wff = WffValidator(s)
-        #wff.print_valid_wff()
-        #table = TruthTable(s)
-        #table.print_table()
+        wff = WffValidator(s)
+        wff.print_valid_wff()
+        table = TruthTable(s)
+        table.print_table()
 
 if __name__ == "__main__":
     main()

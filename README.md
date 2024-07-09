@@ -1,20 +1,20 @@
 
 # Logic Syntax Checker & Truth-Table Generator
 
-Checks the syntax of propositional logic formulas and generates a truth table from the formula. There is also a GUI.
+Checks the syntax of propositional logic formulas and generates a truth table from the formula. There is also a GUI (using [flet](https://flet.dev/)). 
 
-If you are looking for a truthtable generator for Python, then I would recommend this one: [truth-table-generator](https://pypi.org/project/truth-table-generator/). 
-
-I'm not a programmer. I made this because I always wanted to learn how to create a truth table generator. I submitted it as a final project of [Harvard's CS50p](https://cs50.harvard.edu/python/2022/). 
+If you are looking for a truthtable generator for Python, then I would recommend this one: [truth-table-generator](https://pypi.org/project/truth-table-generator/). I'm not a programmer. I made this because I always to create a truth table generator. I submitted it as a final project for [Harvard's CS50p](https://cs50.harvard.edu/python/2022/). 
 
 
 ## Installation
 
-At least at this point, I would copy the repo.
+Copy the repo.
     
 ## Usage/Examples
 
-Pass a string to an instantiation of the `WffValidator` class. When the `.valid_wff()` method is used on this instantiation, the terminal will print out whether the wff is syntactically correct.
+The `logic_generator.py` has two main classes: the `WffValidator` class and the `TruthTable` class. The former checks syntax, the latter generates a truth table. 
+
+With respect to the `WffValidator` class, a string is passed to an instantiation of the `WffValidator` class. When the `.valid_wff()` method is used on this instantiation, the terminal will print out whether the wff is syntactically correct.
 
 ```python
 s = "A^~B"
@@ -24,7 +24,7 @@ wff.valid_wff()
 
 ![Image](imgs/wff_check1.png)
 
-![Image](imgs/wff_check.png)
+![Image](imgs/wff_check.gif)
 
 You can instantiate the `TruthTable` class with a string representing a logical expression and call the `.print_table()` method to output a table in the terminal.
 
@@ -89,10 +89,6 @@ You can run the `ft_gui.py` file and it will open a GUI.
 
 ![Image](imgs/gui_img.png)
 
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
 
 
 ## Authors
