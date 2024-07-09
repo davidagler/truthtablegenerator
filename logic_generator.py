@@ -113,7 +113,6 @@ def main():
             break
         if not s: continue
 
-        # Uncomment to test
         wff = WffValidator(s)
         wff.print_valid_wff()
         table = TruthTable(s)

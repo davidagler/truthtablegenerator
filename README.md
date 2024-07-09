@@ -14,22 +14,22 @@ Copy the repo.
 
 The `logic_generator.py` has two main classes: the `WffValidator` class and the `TruthTable` class. The former checks syntax, the latter generates a truth table. 
 
-With respect to the `WffValidator` class, a string is passed to an instantiation of the `WffValidator` class. When the `.valid_wff()` method is used on this instantiation, the terminal will print out whether the wff is syntactically correct.
+![Image](imgs/wff_check1.png)
+
+With respect to the `WffValidator` class, a string is passed to an instantiation of the `WffValidator` class. When the `.print_valid_wff()` method is used on this instantiation, the terminal will print out whether the wff is syntactically correct.
 
 ```python
-s = "A^~B"
+s = input("wff > ")
 wff = WffValidator(s)
-wff.valid_wff()
+wff.print_valid_wff()
 ```
-
-![Image](imgs/wff_check1.png)
 
 ![Image](imgs/wff_check.gif)
 
 You can instantiate the `TruthTable` class with a string representing a logical expression and call the `.print_table()` method to output a table in the terminal.
 
 ```python
-w = "A^~B"
+w = input("wff > ")
 table = TruthTable(w)
 table.print_table()
 ```
@@ -85,9 +85,12 @@ The program uses `tabulate` and the default output is `fancy_outline`, but you c
 \end{tabular}
 ```
 
-You can run the `ft_gui.py` file and it will open a GUI.
+## GUI
+
+I made a GUI using flet. You can run the `ft_gui.py` file and it will open a GUI.
 
 ![Image](imgs/gui_img.png)
+![Image](imgs/gui_img2.png)
 
 
 
