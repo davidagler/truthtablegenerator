@@ -1,0 +1,346 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> wff
+Rule 1     wff -> subwff
+Rule 2     subwff -> LPAREN subwff RPAREN
+Rule 3     subwff -> subwff BICONDITIONAL subwff
+Rule 4     subwff -> subwff DISJUNCT subwff
+Rule 5     subwff -> subwff CONJUNCT subwff
+Rule 6     subwff -> subwff CONDITIONAL subwff
+Rule 7     subwff -> NEGATION subwff
+Rule 8     subwff -> LETTER
+Rule 9     subwff -> TVALUE
+
+Terminals, with rules where they appear
+
+BICONDITIONAL        : 3
+CONDITIONAL          : 6
+CONJUNCT             : 5
+DISJUNCT             : 4
+LETTER               : 8
+LPAREN               : 2
+NEGATION             : 7
+RPAREN               : 2
+TVALUE               : 9
+error                : 
+
+Nonterminals, with rules where they appear
+
+subwff               : 1 2 3 3 4 4 5 5 6 6 7
+wff                  : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . wff
+    (1) wff -> . subwff
+    (2) subwff -> . LPAREN subwff RPAREN
+    (3) subwff -> . subwff BICONDITIONAL subwff
+    (4) subwff -> . subwff DISJUNCT subwff
+    (5) subwff -> . subwff CONJUNCT subwff
+    (6) subwff -> . subwff CONDITIONAL subwff
+    (7) subwff -> . NEGATION subwff
+    (8) subwff -> . LETTER
+    (9) subwff -> . TVALUE
+
+    LPAREN          shift and go to state 3
+    NEGATION        shift and go to state 4
+    LETTER          shift and go to state 5
+    TVALUE          shift and go to state 6
+
+    wff                            shift and go to state 1
+    subwff                         shift and go to state 2
+
+state 1
+
+    (0) S' -> wff .
+
+
+
+state 2
+
+    (1) wff -> subwff .
+    (3) subwff -> subwff . BICONDITIONAL subwff
+    (4) subwff -> subwff . DISJUNCT subwff
+    (5) subwff -> subwff . CONJUNCT subwff
+    (6) subwff -> subwff . CONDITIONAL subwff
+
+    $end            reduce using rule 1 (wff -> subwff .)
+    BICONDITIONAL   shift and go to state 7
+    DISJUNCT        shift and go to state 8
+    CONJUNCT        shift and go to state 9
+    CONDITIONAL     shift and go to state 10
+
+
+state 3
+
+    (2) subwff -> LPAREN . subwff RPAREN
+    (2) subwff -> . LPAREN subwff RPAREN
+    (3) subwff -> . subwff BICONDITIONAL subwff
+    (4) subwff -> . subwff DISJUNCT subwff
+    (5) subwff -> . subwff CONJUNCT subwff
+    (6) subwff -> . subwff CONDITIONAL subwff
+    (7) subwff -> . NEGATION subwff
+    (8) subwff -> . LETTER
+    (9) subwff -> . TVALUE
+
+    LPAREN          shift and go to state 3
+    NEGATION        shift and go to state 4
+    LETTER          shift and go to state 5
+    TVALUE          shift and go to state 6
+
+    subwff                         shift and go to state 11
+
+state 4
+
+    (7) subwff -> NEGATION . subwff
+    (2) subwff -> . LPAREN subwff RPAREN
+    (3) subwff -> . subwff BICONDITIONAL subwff
+    (4) subwff -> . subwff DISJUNCT subwff
+    (5) subwff -> . subwff CONJUNCT subwff
+    (6) subwff -> . subwff CONDITIONAL subwff
+    (7) subwff -> . NEGATION subwff
+    (8) subwff -> . LETTER
+    (9) subwff -> . TVALUE
+
+    LPAREN          shift and go to state 3
+    NEGATION        shift and go to state 4
+    LETTER          shift and go to state 5
+    TVALUE          shift and go to state 6
+
+    subwff                         shift and go to state 12
+
+state 5
+
+    (8) subwff -> LETTER .
+
+    BICONDITIONAL   reduce using rule 8 (subwff -> LETTER .)
+    DISJUNCT        reduce using rule 8 (subwff -> LETTER .)
+    CONJUNCT        reduce using rule 8 (subwff -> LETTER .)
+    CONDITIONAL     reduce using rule 8 (subwff -> LETTER .)
+    $end            reduce using rule 8 (subwff -> LETTER .)
+    RPAREN          reduce using rule 8 (subwff -> LETTER .)
+
+
+state 6
+
+    (9) subwff -> TVALUE .
+
+    BICONDITIONAL   reduce using rule 9 (subwff -> TVALUE .)
+    DISJUNCT        reduce using rule 9 (subwff -> TVALUE .)
+    CONJUNCT        reduce using rule 9 (subwff -> TVALUE .)
+    CONDITIONAL     reduce using rule 9 (subwff -> TVALUE .)
+    $end            reduce using rule 9 (subwff -> TVALUE .)
+    RPAREN          reduce using rule 9 (subwff -> TVALUE .)
+
+
+state 7
+
+    (3) subwff -> subwff BICONDITIONAL . subwff
+    (2) subwff -> . LPAREN subwff RPAREN
+    (3) subwff -> . subwff BICONDITIONAL subwff
+    (4) subwff -> . subwff DISJUNCT subwff
+    (5) subwff -> . subwff CONJUNCT subwff
+    (6) subwff -> . subwff CONDITIONAL subwff
+    (7) subwff -> . NEGATION subwff
+    (8) subwff -> . LETTER
+    (9) subwff -> . TVALUE
+
+    LPAREN          shift and go to state 3
+    NEGATION        shift and go to state 4
+    LETTER          shift and go to state 5
+    TVALUE          shift and go to state 6
+
+    subwff                         shift and go to state 13
+
+state 8
+
+    (4) subwff -> subwff DISJUNCT . subwff
+    (2) subwff -> . LPAREN subwff RPAREN
+    (3) subwff -> . subwff BICONDITIONAL subwff
+    (4) subwff -> . subwff DISJUNCT subwff
+    (5) subwff -> . subwff CONJUNCT subwff
+    (6) subwff -> . subwff CONDITIONAL subwff
+    (7) subwff -> . NEGATION subwff
+    (8) subwff -> . LETTER
+    (9) subwff -> . TVALUE
+
+    LPAREN          shift and go to state 3
+    NEGATION        shift and go to state 4
+    LETTER          shift and go to state 5
+    TVALUE          shift and go to state 6
+
+    subwff                         shift and go to state 14
+
+state 9
+
+    (5) subwff -> subwff CONJUNCT . subwff
+    (2) subwff -> . LPAREN subwff RPAREN
+    (3) subwff -> . subwff BICONDITIONAL subwff
+    (4) subwff -> . subwff DISJUNCT subwff
+    (5) subwff -> . subwff CONJUNCT subwff
+    (6) subwff -> . subwff CONDITIONAL subwff
+    (7) subwff -> . NEGATION subwff
+    (8) subwff -> . LETTER
+    (9) subwff -> . TVALUE
+
+    LPAREN          shift and go to state 3
+    NEGATION        shift and go to state 4
+    LETTER          shift and go to state 5
+    TVALUE          shift and go to state 6
+
+    subwff                         shift and go to state 15
+
+state 10
+
+    (6) subwff -> subwff CONDITIONAL . subwff
+    (2) subwff -> . LPAREN subwff RPAREN
+    (3) subwff -> . subwff BICONDITIONAL subwff
+    (4) subwff -> . subwff DISJUNCT subwff
+    (5) subwff -> . subwff CONJUNCT subwff
+    (6) subwff -> . subwff CONDITIONAL subwff
+    (7) subwff -> . NEGATION subwff
+    (8) subwff -> . LETTER
+    (9) subwff -> . TVALUE
+
+    LPAREN          shift and go to state 3
+    NEGATION        shift and go to state 4
+    LETTER          shift and go to state 5
+    TVALUE          shift and go to state 6
+
+    subwff                         shift and go to state 16
+
+state 11
+
+    (2) subwff -> LPAREN subwff . RPAREN
+    (3) subwff -> subwff . BICONDITIONAL subwff
+    (4) subwff -> subwff . DISJUNCT subwff
+    (5) subwff -> subwff . CONJUNCT subwff
+    (6) subwff -> subwff . CONDITIONAL subwff
+
+    RPAREN          shift and go to state 17
+    BICONDITIONAL   shift and go to state 7
+    DISJUNCT        shift and go to state 8
+    CONJUNCT        shift and go to state 9
+    CONDITIONAL     shift and go to state 10
+
+
+state 12
+
+    (7) subwff -> NEGATION subwff .
+    (3) subwff -> subwff . BICONDITIONAL subwff
+    (4) subwff -> subwff . DISJUNCT subwff
+    (5) subwff -> subwff . CONJUNCT subwff
+    (6) subwff -> subwff . CONDITIONAL subwff
+
+    BICONDITIONAL   reduce using rule 7 (subwff -> NEGATION subwff .)
+    DISJUNCT        reduce using rule 7 (subwff -> NEGATION subwff .)
+    CONJUNCT        reduce using rule 7 (subwff -> NEGATION subwff .)
+    CONDITIONAL     reduce using rule 7 (subwff -> NEGATION subwff .)
+    $end            reduce using rule 7 (subwff -> NEGATION subwff .)
+    RPAREN          reduce using rule 7 (subwff -> NEGATION subwff .)
+
+  ! BICONDITIONAL   [ shift and go to state 7 ]
+  ! DISJUNCT        [ shift and go to state 8 ]
+  ! CONJUNCT        [ shift and go to state 9 ]
+  ! CONDITIONAL     [ shift and go to state 10 ]
+
+
+state 13
+
+    (3) subwff -> subwff BICONDITIONAL subwff .
+    (3) subwff -> subwff . BICONDITIONAL subwff
+    (4) subwff -> subwff . DISJUNCT subwff
+    (5) subwff -> subwff . CONJUNCT subwff
+    (6) subwff -> subwff . CONDITIONAL subwff
+
+    BICONDITIONAL   reduce using rule 3 (subwff -> subwff BICONDITIONAL subwff .)
+    DISJUNCT        reduce using rule 3 (subwff -> subwff BICONDITIONAL subwff .)
+    CONJUNCT        reduce using rule 3 (subwff -> subwff BICONDITIONAL subwff .)
+    CONDITIONAL     reduce using rule 3 (subwff -> subwff BICONDITIONAL subwff .)
+    $end            reduce using rule 3 (subwff -> subwff BICONDITIONAL subwff .)
+    RPAREN          reduce using rule 3 (subwff -> subwff BICONDITIONAL subwff .)
+
+  ! BICONDITIONAL   [ shift and go to state 7 ]
+  ! DISJUNCT        [ shift and go to state 8 ]
+  ! CONJUNCT        [ shift and go to state 9 ]
+  ! CONDITIONAL     [ shift and go to state 10 ]
+
+
+state 14
+
+    (4) subwff -> subwff DISJUNCT subwff .
+    (3) subwff -> subwff . BICONDITIONAL subwff
+    (4) subwff -> subwff . DISJUNCT subwff
+    (5) subwff -> subwff . CONJUNCT subwff
+    (6) subwff -> subwff . CONDITIONAL subwff
+
+    BICONDITIONAL   reduce using rule 4 (subwff -> subwff DISJUNCT subwff .)
+    DISJUNCT        reduce using rule 4 (subwff -> subwff DISJUNCT subwff .)
+    CONJUNCT        reduce using rule 4 (subwff -> subwff DISJUNCT subwff .)
+    CONDITIONAL     reduce using rule 4 (subwff -> subwff DISJUNCT subwff .)
+    $end            reduce using rule 4 (subwff -> subwff DISJUNCT subwff .)
+    RPAREN          reduce using rule 4 (subwff -> subwff DISJUNCT subwff .)
+
+  ! BICONDITIONAL   [ shift and go to state 7 ]
+  ! DISJUNCT        [ shift and go to state 8 ]
+  ! CONJUNCT        [ shift and go to state 9 ]
+  ! CONDITIONAL     [ shift and go to state 10 ]
+
+
+state 15
+
+    (5) subwff -> subwff CONJUNCT subwff .
+    (3) subwff -> subwff . BICONDITIONAL subwff
+    (4) subwff -> subwff . DISJUNCT subwff
+    (5) subwff -> subwff . CONJUNCT subwff
+    (6) subwff -> subwff . CONDITIONAL subwff
+
+    BICONDITIONAL   reduce using rule 5 (subwff -> subwff CONJUNCT subwff .)
+    DISJUNCT        reduce using rule 5 (subwff -> subwff CONJUNCT subwff .)
+    CONJUNCT        reduce using rule 5 (subwff -> subwff CONJUNCT subwff .)
+    CONDITIONAL     reduce using rule 5 (subwff -> subwff CONJUNCT subwff .)
+    $end            reduce using rule 5 (subwff -> subwff CONJUNCT subwff .)
+    RPAREN          reduce using rule 5 (subwff -> subwff CONJUNCT subwff .)
+
+  ! BICONDITIONAL   [ shift and go to state 7 ]
+  ! DISJUNCT        [ shift and go to state 8 ]
+  ! CONJUNCT        [ shift and go to state 9 ]
+  ! CONDITIONAL     [ shift and go to state 10 ]
+
+
+state 16
+
+    (6) subwff -> subwff CONDITIONAL subwff .
+    (3) subwff -> subwff . BICONDITIONAL subwff
+    (4) subwff -> subwff . DISJUNCT subwff
+    (5) subwff -> subwff . CONJUNCT subwff
+    (6) subwff -> subwff . CONDITIONAL subwff
+
+    BICONDITIONAL   reduce using rule 6 (subwff -> subwff CONDITIONAL subwff .)
+    DISJUNCT        reduce using rule 6 (subwff -> subwff CONDITIONAL subwff .)
+    CONJUNCT        reduce using rule 6 (subwff -> subwff CONDITIONAL subwff .)
+    CONDITIONAL     reduce using rule 6 (subwff -> subwff CONDITIONAL subwff .)
+    $end            reduce using rule 6 (subwff -> subwff CONDITIONAL subwff .)
+    RPAREN          reduce using rule 6 (subwff -> subwff CONDITIONAL subwff .)
+
+  ! BICONDITIONAL   [ shift and go to state 7 ]
+  ! DISJUNCT        [ shift and go to state 8 ]
+  ! CONJUNCT        [ shift and go to state 9 ]
+  ! CONDITIONAL     [ shift and go to state 10 ]
+
+
+state 17
+
+    (2) subwff -> LPAREN subwff RPAREN .
+
+    BICONDITIONAL   reduce using rule 2 (subwff -> LPAREN subwff RPAREN .)
+    DISJUNCT        reduce using rule 2 (subwff -> LPAREN subwff RPAREN .)
+    CONJUNCT        reduce using rule 2 (subwff -> LPAREN subwff RPAREN .)
+    CONDITIONAL     reduce using rule 2 (subwff -> LPAREN subwff RPAREN .)
+    $end            reduce using rule 2 (subwff -> LPAREN subwff RPAREN .)
+    RPAREN          reduce using rule 2 (subwff -> LPAREN subwff RPAREN .)
+
