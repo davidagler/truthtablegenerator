@@ -3,12 +3,15 @@
 
 Checks the syntax of propositional logic formulas and generates a truth table from the formula. There is also a GUI (using [flet](https://flet.dev/)). 
 
-If you are looking for a truthtable generator for Python, then I would recommend this one: [truth-table-generator](https://pypi.org/project/truth-table-generator/). I'm not a programmer. I made this because I always to create a truth table generator. I submitted it as a final project for [Harvard's CS50p](https://cs50.harvard.edu/python/2022/). 
+If you are looking for a truthtable generator for Python, then I would recommend this one: [truth-table-generator](https://pypi.org/project/truth-table-generator/). It is more robust and I'm not a programmer. I made this because I teach introduction to logic courses and thought it would be fun. I submitted it as a final project for [Harvard's CS50p](https://cs50.harvard.edu/python/2022/). 
 
 
 ## Installation
 
-Copy the repo.
+- Copy the repo.
+- Install all the requirements `pip install - r /path/to/requirements.txt`
+- Run either `ft_gui.py` to run the GUI or `logic_generator.py` for command line.
+
     
 ## Usage/Examples
 
