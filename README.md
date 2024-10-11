@@ -11,7 +11,6 @@ If you are looking for a truthtable generator for Python, then I would recommend
 - Copy the repo.
 - Install all the requirements `pip install - r /path/to/requirements.txt`
 - Run either `ft_gui.py` to run the GUI or `logic_generator.py` for command line.
-
     
 ## Usage/Examples
 
